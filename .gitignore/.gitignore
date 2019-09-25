@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+
+class circle
+{
+        float radius, area, perimeter;   //data members
+    public:
+        circle()
+        {
+                cout<<"\n Enter the value of Radius : ";
+                cin>>radius;
+        }
+        void calculate();   //member function
+        void display();     //member function
+};
+ void circle :: calculate()  //accessing data members of a class circle
+{
+        area = 3.14 * radius * radius;
+        perimeter= 2*3.14*radius;
+}
+ void circle :: display()
+{
+        cout<<"\n Area of Circle : "<<area;
+        cout<<"\n Perimeter of Circle : "<<perimeter;
+}
+int main()
+{
+        circle cr;   //object created
+        cr.calculate();   //calling function
+        cr.display();  //calling function
+        return 0;
+}
