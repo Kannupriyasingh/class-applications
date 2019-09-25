@@ -1,0 +1,35 @@
+#include <iostream>
+#include<cmath>
+
+using namespace std;
+
+class calcu
+{
+    float side;
+    float volume;
+public:
+    calcu()
+    {
+        cout<<"Enter the size of side of cube:"<<endl;
+        cin>>side;
+
+    }
+    void vol();
+    void display();
+
+};
+inline void calcu::vol()
+{
+    volume=side*side*side;
+}
+ inline void calcu::display()
+ {
+     cout<<"volume of cube :"<<volume;
+ }
+ int main()
+ {
+     calcu c;
+     c.vol();
+     c.display();
+     return 0;
+ }
