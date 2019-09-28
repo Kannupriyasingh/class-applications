@@ -1,0 +1,72 @@
+#include <iostream>
+#include<cmath>
+
+using namespace std;
+
+class quad
+{
+private:
+    float a,b,c;
+    public:
+        void getinfo(float a, float b, float c);
+        void display();
+        void equal_(float a, float b);
+        void imag();
+        void real(float a, float b, float c);
+};
+void quad::getinfo(float a1, float b1, float c1)
+{
+    a=a1; b=b1; c=c1;
+}
+void quad::equal_(float a, float b)
+{
+    float x;
+    x= -b/(2*a);
+    cout<<"roots are equal"<<x<<endl;
+}
+void quad::imag()
+{
+    cout<<"roots are imaginary"<<endl;
+}
+void quad::real(float a, float b, float det)
+{
+    float x1,x2,temp;
+    temp = sqrt(det);
+    x1=(-b + temp)/(2*a);
+    x2=(-b - temp)/(2*a);
+    cout<<"roots are real"<<endl;
+    cout<<"x1= "<<x1<<endl;
+     cout<<"x2= "<<x2<<endl;
+    }
+int main()
+{
+    quad q;
+    float a1,b1,c1;
+    cout<<"enter the three numbers"<<endl;
+    cin>>a1>>b1>>c1;
+    q.getinfo(a1,b1,c1);
+      if (a1==0)
+      {
+          float temp;
+          temp=c1/b1;
+          cout<<"linear roots"<<temp<<endl;
+
+      }
+      else
+      {
+          float det;
+          det = b1*b1 -(4*a1*c1);
+          if (det==0)
+            q.equal_(a1,b1);
+          else if (det<0)
+            q.imag();
+          else if (det>0)
+            q.real(a1,b1,c1);
+      }
+      return 0;
+}
+
+
+
+
+
